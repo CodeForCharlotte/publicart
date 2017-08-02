@@ -8,6 +8,19 @@ Bundler.require(*Rails.groups)
 
 module PublicArt
   class Application < Rails::Application
+        config.generators do |g|
+      g.orm :active_record
+      g.test_framework :rspec,
+        :fixtures => true,
+        :view_specs => false,
+        :helper_specs => false,
+        :routing_specs => false,
+        :controller_specs => false,
+        :request_specs => true
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+    config.time_zone = 'Eastern Time (US & Canada)'
+
     config.active_job.queue_adapter = :sidekiq
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1

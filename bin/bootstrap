@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+if ENV["BOXEN_SOCKET_DIR"]
+  `cp config/database.yml.boxen config/database.yml`
+  `echo 'REDIS_PROVIDER=BOXEN_REDIS_URL' >> .env`
+else
+  `cp config/database.yml.standard config/database.yml`
+end
+
+`bundle`
+`bundle exec rake db:create:all`
+`bundle exec rake db:migrate`
+`bundle exec rake db:migrate RAILS_ENV=test`
+`bundle exec rake db:seed`
