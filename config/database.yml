@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: public-art_development
+  database: publicart_development
   encoding: unicode
   port: 15432
   host: localhost
@@ -8,7 +8,7 @@ development:
 
 test:
   adapter: postgresql
-  database: public-art_test
+  database: publicart_test
   encoding: unicode
   port: 15432
   host: localhost

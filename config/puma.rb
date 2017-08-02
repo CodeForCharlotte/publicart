@@ -6,7 +6,7 @@ preload_app!
 
 rackup      DefaultRackup
 if ENV["BOXEN_SOCKET_DIR"]
-  bind        "unix://#{ENV['BOXEN_SOCKET_DIR']}/public-art"
+  bind        "unix://#{ENV['BOXEN_SOCKET_DIR']}/publicart"
 else
   port        ENV['PORT']     || 3000
 end
