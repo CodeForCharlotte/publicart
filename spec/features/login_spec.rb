@@ -8,7 +8,6 @@ RSpec.describe "Logging in", :type => :feature do
   end
 
   it "signs me in" do
-    save_and_open_page
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log in'
